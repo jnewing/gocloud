@@ -1,0 +1,24 @@
+# cloudflare config
+# (required) api: the base uri for the cloudflare api
+# (required) email: the email you use to login to your cloudflare account
+# (required) key: your cloudflare global api key
+#                 you can get your key here: https://dash.cloudflare.com/profile/api-tokens
+cloudflare:
+  api: "https://api.cloudflare.com/client/v4"
+  email: "your@cloudflare.email.com"
+  key: "00000000aaaabbbbccccdddd1111222222222"
+
+# zones
+# so where you can add any zones you want to check and update
+# (required) id: contains the zone-id of the zone you want to update
+# (required) update: contains an array of type A record names to "match" and update with ip
+# (optional) ip: the ip to update if NOT the default ip pulled via API
+zones:
+  -
+    id: "00001111aaaabbbbccccdddd2222ffff"
+    update: ["domain.com", "sub.domain.com"]
+  -
+    id: "99998888aaaabbbbccccdddd2222eeee"
+    update: ["anotherdomain.com"]
+    ip: "192.168.1.10"
+    
